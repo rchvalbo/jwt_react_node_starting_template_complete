@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import Login from './login';
 import Signup from './signup';
+import Dashboard from './dashboard';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Here we will create our routes right off the bat in order to 
@@ -13,6 +14,7 @@ ReactDOM.render(
 <Router>
     <div>
         <Route exact path="/" component={App} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
     </div>

@@ -1,26 +1,16 @@
 import React, { Component } from "react";
 
 /* We want to import our 'AuthHelperMethods' component in order to send a login request */
-<<<<<<< HEAD
 import AuthHelperMethods from './components/AuthHelperMethods';
-=======
-
->>>>>>> 40702bb99251b06a8010e4a0f32f7ca04bae26fa
 import { Link } from 'react-router-dom';
 import './login.css'
 
 
-<<<<<<< HEAD
 
 class Login extends Component {
 
     /* In order to utilize our authentication methods within the AuthService class, we want to instantiate a new object */
     Auth = new AuthHelperMethods();
-=======
-class Login extends Component {
-
-    /* In order to utilize our authentication methods within the AuthService class, we want to instantiate a new object */
->>>>>>> 40702bb99251b06a8010e4a0f32f7ca04bae26fa
 
     state = {
         username: "",
@@ -40,31 +30,22 @@ class Login extends Component {
         e.preventDefault();
 
         /* Here is where all the login logic will go. Upon clicking the login button, we would like to utilize a login method that will send our entered credentials over to the server for verification. Once verified, it should store your token and send you to the protected route. */
-<<<<<<< HEAD
         this.Auth.login(this.state.username, this.state.password)
             .then(res => {
                 if (res === false) {
                     return alert("Sorry those credentials don't exist!");
                 }
-                this.props.history.replace('/');
+                this.props.history.replace('/dashboard');
             })
             .catch(err => {
                 alert(err);
             })
-=======
-       
->>>>>>> 40702bb99251b06a8010e4a0f32f7ca04bae26fa
     }
 
     componentWillMount() {
-
         /* Here is a great place to redirect someone who is already logged in to the protected route */
-<<<<<<< HEAD
         if (this.Auth.loggedIn())
-            this.props.history.replace('/');
-=======
-        
->>>>>>> 40702bb99251b06a8010e4a0f32f7ca04bae26fa
+            this.props.history.replace('/dashboard');
     }
 
     render() {
@@ -94,9 +75,9 @@ class Login extends Component {
                         </form>
                         <Link className="link" to="/signup">Don't have an account? <span className="link-signup">Signup</span></Link>
                     </div>
-                    <div className="signiture">
+                    {/* <div className="signiture">
                         <h1>Template Built & Designed by Roman Chvalbo</h1>
-                    </div>
+                    </div> */}
                 </div>
                 
             </React.Fragment>

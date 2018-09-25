@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import './App.css';
 
 /* Once the 'Authservice' and 'withAuth' componenets are created, import them into App.js */
@@ -13,35 +14,17 @@ class App extends Component {
 
   Auth = new AuthHelperMethods();
 
-
-  state = {
-    username: "",
-    password: ""
-}
-
-/* Here will want to add a method to log the user out upon clicking 'Logout' */
-  _handleLogout = () => {
-
-    this.Auth.logout()
-    this.props.history.replace('/login');
-
-  }
-
   //Render the protected component
   render() {
 
-    let name = this.props.confirm.username;
-
+    //let name = this.props.confirm.username;
+    console.log("Rendering Appjs!")
     return (
+      
       <div className="App">
-        <div className="main-page">
-          <div className="top-section">
-            <h1>Welcome, {name}</h1>
-          </div>
-          <div className="bottom-section">
-            <button onClick={this._handleLogout}>LOGOUT</button>
-          </div>
-        </div>
+        {
+           this.props.history.location.pathname === "/" ? <Redirect to="/dashboard" /> : null
+        }
       </div>
     );
   }

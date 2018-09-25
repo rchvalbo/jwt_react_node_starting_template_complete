@@ -1,20 +1,12 @@
 import React, {Component} from "react";
-<<<<<<< HEAD
 import AuthHelperMethods from './components/AuthHelperMethods';
-=======
-
->>>>>>> 40702bb99251b06a8010e4a0f32f7ca04bae26fa
 import './login.css'
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
 export default class Signup extends Component {
     
-<<<<<<< HEAD
     Auth = new AuthHelperMethods();
-=======
-    
->>>>>>> 40702bb99251b06a8010e4a0f32f7ca04bae26fa
     state = {
         username: "",
         password: ""
@@ -35,7 +27,6 @@ export default class Signup extends Component {
 
         e.preventDefault();
         
-<<<<<<< HEAD
         axios.post("/signup", {
                 username: this.state.username,
                 password: this.state.password
@@ -43,14 +34,18 @@ export default class Signup extends Component {
                 console.log(data);
                 this.props.history.replace('/login');
             })
-=======
-        
->>>>>>> 40702bb99251b06a8010e4a0f32f7ca04bae26fa
-        
-        
+    }
+
+    componentDidMount() {
+        console.log(this.Auth.loggedIn());
+        if(this.Auth.loggedIn()){
+            this.props.history.push('/dashboard')
+        }
     }
 
     render() {
+
+
         return (
             <React.Fragment>
                 <div className="main-wrapper">
@@ -77,9 +72,9 @@ export default class Signup extends Component {
                         </form>
                         <Link className="link" to="/login">Already have an account? <span className="link-signup">Login</span></Link>
                     </div>
-                    <div className="signiture">
+                    {/* <div className="signiture">
                         <h1>Template Built & Designed by Roman Chvalbo</h1>
-                    </div>
+                    </div> */}
                 </div>
                 
             </React.Fragment>
