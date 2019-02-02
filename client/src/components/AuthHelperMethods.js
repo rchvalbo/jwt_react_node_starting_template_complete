@@ -1,11 +1,9 @@
 import decode from 'jwt-decode';
 
 export default class AuthHelperMethods {
+    
     // Initializing important variables
-    constructor(domain) {
-        //THIS LINE IS ONLY USED WHEN YOU'RE IN PRODUCTION MODE! 
-        this.domain = domain || 'http://localhost:3000' // API server domain
-    }
+
     login = (username, password) => {
         
         // Get a token from api server using the fetch api

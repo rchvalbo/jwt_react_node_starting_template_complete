@@ -27,8 +27,8 @@ class Login extends Component {
     }
 
     handleFormSubmit = (e) => {
+        
         e.preventDefault();
-
         /* Here is where all the login logic will go. Upon clicking the login button, we would like to utilize a login method that will send our entered credentials over to the server for verification. Once verified, it should store your token and send you to the protected route. */
         this.Auth.login(this.state.username, this.state.password)
             .then(res => {
