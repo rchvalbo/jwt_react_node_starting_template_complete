@@ -13,14 +13,11 @@ class Dashboard extends Component {
 
     /* Here will want to add a method to log the user out upon clicking 'Logout' */
     _handleLogout = () => {
-
         this.Auth.logout()
         this.props.history.replace('/login');
-
     }
 
     componentDidMount() {
-        console.log("STUFFF")
         let userInfo = this.Auth.getConfirm();
         this.setState({
             username: userInfo.username
@@ -28,9 +25,6 @@ class Dashboard extends Component {
     }
     //Render the protected component
     render() {
-
-        
-
         return (
             <div className="App">
                 <div className="main-page">
