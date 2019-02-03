@@ -2,8 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 
@@ -71,6 +70,7 @@ app.post('/log-in', (req, res) => {
             },
             'super secret',
             { expiresIn: 129600 }); // Signing the token
+          
           res.json({
             sucess: true,
             err: null,
@@ -92,7 +92,7 @@ app.post('/log-in', (req, res) => {
 app.get('/', jwtMW /* Using the express jwt MW here */, (req, res) => {
   console.log("Web Token Checked.")
   res.send('You are authenticated'); //Sending some response when authenticated
-}); 4
+});
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, function () {

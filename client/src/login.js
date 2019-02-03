@@ -35,7 +35,7 @@ class Login extends Component {
                 if (res === false) {
                     return alert("Sorry those credentials don't exist!");
                 }
-                this.props.history.replace('/dashboard');
+                this.props.history.replace('/');
             })
             .catch(err => {
                 alert(err);
@@ -45,7 +45,7 @@ class Login extends Component {
     componentWillMount() {
         /* Here is a great place to redirect someone who is already logged in to the protected route */
         if (this.Auth.loggedIn())
-            this.props.history.replace('/dashboard');
+            this.props.history.replace('/');
     }
 
     render() {
