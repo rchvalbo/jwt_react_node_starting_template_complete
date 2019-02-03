@@ -5,7 +5,6 @@ import './index.css';
 import App from './App';
 import Login from './login';
 import Signup from './signup';
-import Dashboard from './dashboard';
 import registerServiceWorker from './registerServiceWorker';
 
 /* Here we will create our routes right off the bat in order to 
@@ -16,7 +15,6 @@ ReactDOM.render(
             <Route exact path="/" component={App} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/*" component={App} />
         </div>
     </Router>, document.getElementById('root'));
 registerServiceWorker();
